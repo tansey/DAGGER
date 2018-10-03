@@ -29,10 +29,7 @@ def topological_sort(adj_matrix):
 	Output: an array with sorted indices of nodes.
 	"""
 	g = networkx.from_numpy_matrix(adj_matrix,create_using=networkx.MultiDiGraph())
-	sorted_inds = networkx.topological_sort(g)
-	print(sorted_inds)
-	adj = adj_matrix[sorted_inds][:,sorted_inds]
-	return adj
+	return networkx.topological_sort(g)
 
 def find_one_indices(lst):
 	return np.where(lst == 1)[0]
